@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8F3EE;
+    color: #0B1F5C;
+    @apply antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(232, 77, 138, 0.2);
+    color: #0B1F5C;
+  }
+}
+
+@media print {
+  aside, .no-print {
+    display: none !important;
+  }
+}
+
+/* Responsive demo: long tables can scroll on phones, forms remain usable. */
+@media (max-width: 640px) {
+  main { min-width: 0; overflow-wrap: anywhere; }
+  main input, main textarea, main select { max-width: 100%; }
+  main table { min-width: max-content; }
+  main .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+  main button { touch-action: manipulation; }
+}

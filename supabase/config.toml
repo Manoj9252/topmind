@@ -1,0 +1,19 @@
+# Supabase CLI settings for this project's Edge Functions.
+# Webhooks and the scheduled dispatcher authenticate with their own signatures
+# and secrets, so the platform's JWT check is turned off for them.
+project_id = "topmind"
+
+[functions.admin-users]
+verify_jwt = true
+
+[functions.create-payment-link]
+verify_jwt = true
+
+[functions.dispatch-messages]
+verify_jwt = false
+
+[functions.payment-webhook]
+verify_jwt = false
+
+[functions.social-webhook]
+verify_jwt = false
